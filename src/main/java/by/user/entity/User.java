@@ -1,3 +1,5 @@
+package by.user.entity;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -9,32 +11,6 @@ public class User {
     private String password;
     private int age;
     private LocalDateTime insertedAtUtc;
-
-    @Override
-    public String toString() {
-        return "User{" +
-               "id=" + id +
-               ", name='" + name + '\'' +
-               ", surname='" + surname + '\'' +
-               ", userName='" + userName + '\'' +
-               ", password='" + password + '\'' +
-               ", age=" + age +
-               ", insertedAtUtc=" + insertedAtUtc +
-               '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return age == user.age && Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(insertedAtUtc, user.insertedAtUtc);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, surname, userName, password, age, insertedAtUtc);
-    }
 
     public Long getId() {
         return id;
@@ -90,5 +66,31 @@ public class User {
 
     public void setInsertedAtUtc(LocalDateTime insertedAtUtc) {
         this.insertedAtUtc = insertedAtUtc;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return age == user.age && Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(surname, user.surname) && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(insertedAtUtc, user.insertedAtUtc);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, surname, userName, password, age, insertedAtUtc);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                ", insertedAtUtc=" + insertedAtUtc +
+                '}';
     }
 }
